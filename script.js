@@ -1,10 +1,12 @@
 const baseUrl = "https://el-geladon-backend-by-ip.herokuapp.com/paletas";
 
+let paletas 
+
 // LISTAR TODAS AS PALETAS
 async function findAllPaletas() {
   const response = await fetch(`${baseUrl}/find-paletas`);
 
-  const paletas = await response.json();
+  paletas = await response.json();
   console.log("paletas", paletas)
 
   paletas.forEach((paleta) => {
@@ -37,12 +39,17 @@ findAllPaletas();
 // PESQUISAR POR UMA PALETA
 const findPaletaById = async () => {
 
-    const id = document.getElementById("idPaleta").value;
+    const inputElement = document.getElementById("idPaleta").value; // mesmo input, apenas alterei o nome pq não estamos mais recebendo o id.
 
+    const paletaEscolhida = paletas.filter(paleta => paleta.sabor === inputElement) // acessar nossa variável paletas que contem a lista de paletas retornada da função findAllPaletas. IMPORTANTE: foi necessário declarar paletas fora do escopo da função findAllPaletas para conseguirmos acessá-la dentro desta função. 
+
+    // OBSERVAÇÂO => a variável paletaEscolhida já traz todas a informações da nossa paleta e poderíamos já renderizar na tela. Mas como é requisito do projeto buscarmos a palet pelo id na rota GET, vamos pegar apenas a informação do id e fazer a requisição à API, como fizemos anteriormente com a busca por id. 
+
+    const id = paletaEscolhida[0]._id // precisamos acessar o índice 0, pq o filter SEMPRE retorna uma array, mesmo que tenha apenas um único elemento. 
+    
     const response = await fetch(`${baseUrl}/find-paleta/${id}`);
     const paleta = await response.json();
 
-    console.log("paleta", paleta)
     let isEdit = true
 
     const paletaEscolhidaDiv = document.getElementById("paletaEscolhida");
@@ -64,7 +71,6 @@ const findPaletaById = async () => {
         } alt=${`Paleta de ${paleta.sabor}`} />
     </div>`;
   };
-
 
 // MODAL
 // ALTERAÇÃO EM RELAÇÃO À APOSTILA E VÍDEOS => utilizar a flag isEdit pra sinalizar que o onclick vem do botão editar. 

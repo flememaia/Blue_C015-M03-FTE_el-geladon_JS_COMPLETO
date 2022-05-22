@@ -26,6 +26,7 @@ Verificar comentários nos 3 arquivos indicando:
 
 ## BONUS 
 ## Sexto commit - utilizando icone no botão editar (fontawesome)
+## Sétimo commit - pesquisando por nome no front (constinuamos pesquisando por id na API)
 
 ## OBSERVAÇÕES 
 #### problema servidor => Heroku estava fora do ar na sexta a noite devido manutenção. 
@@ -58,3 +59,16 @@ ex:
 ```js 
 <i class="fa-solid fa-trash-can"></i> 
 ```
+## pesquisando uma paleta por nome 
+1. Ajustr o atributo placeholder no html 
+``` html
+    <input type="text" id="idPaleta" placeholder="Digite o nome da paleta e clique em 'Escolher'" />
+```
+2. declarar a variável paletas (utilizada na função findAllPaletas()) no escopo global (para que ela possa ser acessada também fora da função findAllPaletas())
+3. Atualizar a função findPaletaById(): 
+    - 3.1 recuperar o valor do input digitado pelo usuário (igual fazíamos com o id)
+    - 3.2 procurar o id da paleta digitada pelo usuário, utilizando a lista de paletas salva na variável paletas e pesquisando pelo nome digitado. 
+    - 3.3 uma vez identificado o id, fazer a requisição na API com este id, igual fazíamos na busca por id. 
+
+*OBSERVAÇÃO => se o usuário digitar o nome da paleta diferente de como está cadastrado no back, não conseguiremos encontrá-la na lista de paletas. 
+OPORTUNIDADE => "NORMALIZAR" a informação digitada pelo usuário e a pesquisada na lista (transformar ambas em lowercase + substituir caracteres especiais - como acento do sabor açaí - + remover espaços em branco adicionais que o usuário possa ter digitado por engano.)*
