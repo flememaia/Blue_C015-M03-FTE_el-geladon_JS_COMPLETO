@@ -6,6 +6,7 @@ Verificar comentários nos 3 arquivos indicando:
     PESQUISAR POR UMA PALETA => html, css e script 
     LISTAR TODAS AS PALETAS => html, css e script
     MODAL => html, css e script
+    CADASTRAR UMA PALETA => script 
 
 ## Primeiro commit - Aula 01
 ### Listar todas as paletas 
@@ -13,6 +14,9 @@ Verificar comentários nos 3 arquivos indicando:
 
 ## Segundo commit - Aula 02 - parte 1
 ### Modal (botão cadastrar ainda sem funcionalidade)
+
+## Terceiro commit - Aula 02 - parte 2
+### Cadastrar uma paleta
 
 # OBSERVAÇÕES 
 ## problema servidor => Heroku estava fora do ar na sexta a noite devido manutenção. 
