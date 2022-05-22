@@ -21,6 +21,9 @@ Verificar comentários nos 3 arquivos indicando:
 ## Quarto commit - Aula 03 - parte 1 - Edit
 ### Editar uma paleta
 
+## Quinto commit - Aula 03 - parte 2 - Deletar
+### Editar uma paleta
+
 ## OBSERVAÇÕES 
 #### problema servidor => Heroku estava fora do ar na sexta a noite devido manutenção. 
 #### problema renderizar images => o caminho das imagens estava errado (tinha deletado sem querer a pasta assets quando subi no github). ATENÇÃO => SEMPRE CONFERIR O ENDEREÇO DA IMAGEM E NOMES DOS ARQUIVOS. 
@@ -32,4 +35,9 @@ Verificar comentários nos 3 arquivos indicando:
 ```js 
   document.location.reload(true);
 ``` 
-
+#### deletar uma paleta => ajustes em relação à apostila: 
+1. recuperar o id através de delegação de eventos (identofocar qual botão sofreu o evento de onclick e recuperar o id). *** VOU EXPLICAR MELHOR SOBRE EVENTOS. 
+2. Refresh da página quando adicionar ou atualizar uma paleta
+```js 
+  document.location.reload(true);
+``` 

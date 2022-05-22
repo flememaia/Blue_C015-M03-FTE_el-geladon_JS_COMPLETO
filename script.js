@@ -20,7 +20,7 @@ async function findAllPaletas() {
 
           <div class="PaletaListaItem__acoes Acoes">
             <button class="Acoes__editar" id=${paleta._id} onclick="abrirModal(${isEdit})">editar</button>
-            <button class="Acoes__deletar" onclick="deletePaleta()">deletar</button>
+            <button class="Acoes__deletar" id=${paleta._id} onclick="deletePaleta()">deletar</button>
           </div>
 
           </div>
@@ -55,7 +55,7 @@ const findPaletaById = async () => {
 
         <div class="PaletaListaItem__acoes Acoes">
           <button class="Acoes__editar" id=${paleta._id} onclick="abrirModal(${isEdit})">editar</button>
-          <button class="Acoes__deletar" onclick="deletePaleta(${paleta._id})">deletar</button>
+          <button class="Acoes__deletar" id=${paleta._id} onclick="deletePaleta()">deletar</button>
         </div>
 
       </div>
@@ -146,7 +146,7 @@ async function submitPaleta() {
 
       <div class="PaletaListaItem__acoes Acoes">
         <button class="Acoes__editar"  id=${paleta._id} onclick="abrirModal(${isEdit})">editar</button>
-        <button class="Acoes__deletar" onclick="deletePaleta()">deletar</button>
+        <button class="Acoes__deletar" id=${paleta._id} onclick="deletePaleta()">deletar</button>
       </div>
 
     </div>
@@ -167,3 +167,20 @@ async function submitPaleta() {
   document.location.reload(true); // atualizar a página. Se chamarmos a fecthAllPaletas, vai adicionar 2x na tela 
 };
 
+// DELETAR UMA PALETA
+const deletePaleta = async () => {
+  const id =   event.target.id  
+  console.log("id", id)
+
+  const response = await fetch(`${baseUrl}/delete/${id}`, {
+    method: "delete",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    mode: "cors",
+  });
+  const result = await response.json();
+  alert(result.message)
+  document.getElementById("paletaList").innerHTML = ""
+  document.location.reload(true); // atualizar a página. Se chamarmos a fecthAllPaletas, vai adicionar 2x na tela 
+};
