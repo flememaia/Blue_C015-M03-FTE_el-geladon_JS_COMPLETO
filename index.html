@@ -45,39 +45,43 @@
     <h2>Pesquisar Paleta</h2>
         <div class="paleta-escolhida-espaco">
             <div id="paleta-escolhida-input-espaco">
-                <input type="number" id="idPaleta" placeholder="Digite o ID da paleta e clique em 'Escolher'" />
+                <input type="text" id="idPaleta" placeholder="Digite o ID da paleta e clique em 'Escolher'" />
+                <div>
+                  <h2>Adicionar/Editar Paleta:</h2>
+                  <input type="hidden" id="id" />
+                </div>
                 <button id="idPaletaButton" onclick="findPaletaById()">ESCOLHER</button>
             </div>
             <div id="paletaEscolhida">
-
             </div>
         </div>
     <!-- MODAL & CADASTRAR UMA PALETA--> 
     <section class="button-modal-create">
-      <button type="button" class="default-button" onclick="abrirModalCadastro()">Cadastrar Paleta</button>
+      <button type="button" class="default-button" onclick="abrirModal()">Cadastrar Paleta</button>
     </section>
 
     <section class="modal-overlay" id="overlay">
-
         <div class="modal">
 
             <div class="modal-header">
-                <h2>Cadastrar uma paleta</h2>
+                <h2 id="title-header-modal">Cadastrar uma paleta</h2>
                 <a onclick="fecharModalCadastro()" class="close-modal">x</a>
             </div>
 
             <div class="modal-body">
                 <div>
+                    <input type="hidden" name="id" id="id">
                     <input type="text" name="sabor" id="sabor" placeholder="Sabor da Paleta">
                     <input type="number" name="preco" id="preco" placeholder="Preço da Paleta">
                     <textarea type="text" name="descricao" id="descricao" placeholder="Descrição da Paleta"
                         rows="5"></textarea>
                     <input type="text" name="foto" id="foto" placeholder="Link da Foto da Paleta">
-                    <button onclick="createPaleta()">Cadastrar</button>
+                    <button id="button-form-modal" onclick="submitPaleta()">Cadastrar</button>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- LISTAR TODAS AS PALETAS -->
     <h2>Paletas Disponíveis:</h2>
     <div class="Home__container">

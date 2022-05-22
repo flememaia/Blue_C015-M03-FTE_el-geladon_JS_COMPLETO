@@ -381,3 +381,50 @@ html {
   display: flex;
   justify-content: flex-end;
 }
+
+/* ATUALIZAR E DELETAR PALETA  */
+.Acoes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Acoes__editar,
+.Acoes__deletar {
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: "Exo", sans-serif;
+  padding: 5px;
+  max-width: 280px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 48%;
+  transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
+}
+
+.Acoes__editar {
+  color: blue;
+  border: solid 1px blue;
+  background-color: transparent;
+}
+
+.Acoes__editar:hover {
+  background-color: blue;
+  color: white;
+}
+
+.Acoes__deletar {
+  color: red;
+  border: solid 1px red;
+  background-color: transparent;
+}
+
+.Acoes__deletar:hover {
+  background-color: red;
+  color: white;
+}
+
