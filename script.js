@@ -50,3 +50,12 @@ const findPaletaById = async () => {
     </div>`;
   };
 
+// MODAL
+
+function abrirModalCadastro() {
+  document.querySelector(".modal-overlay").style.display = "flex";
+}
+
+function fecharModalCadastro() {
+  document.querySelector(".modal-overlay").style.display = "none";
+}
