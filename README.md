@@ -24,6 +24,9 @@ Verificar comentários nos 3 arquivos indicando:
 ## Quinto commit - Aula 03 - parte 2 - Deletar
 ### Editar uma paleta
 
+## BONUS 
+## Sexto commit - utilizando icone no botão editar (fontawesome)
+
 ## OBSERVAÇÕES 
 #### problema servidor => Heroku estava fora do ar na sexta a noite devido manutenção. 
 #### problema renderizar images => o caminho das imagens estava errado (tinha deletado sem querer a pasta assets quando subi no github). ATENÇÃO => SEMPRE CONFERIR O ENDEREÇO DA IMAGEM E NOMES DOS ARQUIVOS. 
@@ -41,3 +44,17 @@ Verificar comentários nos 3 arquivos indicando:
 ```js 
   document.location.reload(true);
 ``` 
+#### fontawesome
+1. criar um cadastro em http://fontawesome.io/ clicando em "start for free" => nesta etapa, você precisa apenas incluir seu email
+2. verifique o email enviado pelo font awesome => click no link pra finalizar seu cadastro (cadastrar uma senha completar algumas informações) e começar a utilizar
+3. click em All set. Lets go!
+4. vai abrir uma página com o link a ser incluído no seu html (o "XXXXX" representa o seu códico pessoal)=> 
+```html
+<script src="https://kit.fontawesome.com/XXXXXXX.js" crossorigin="anonymous"></script>
+```
+5. Clicar em "Find and Add Any of Our Free Icons to a Project" => aqui você pode pesquisar pelos ícones (em ingles)
+6. adicionar o trecho de código ao seu arquivo js ou html.
+ex: 
+```js 
+<i class="fa-solid fa-trash-can"></i> 
+```

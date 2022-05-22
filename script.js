@@ -19,7 +19,7 @@ async function findAllPaletas() {
             <div class="PaletaListaItem__descricao">${paleta.descricao}</div>
 
           <div class="PaletaListaItem__acoes Acoes">
-            <button class="Acoes__editar" id=${paleta._id} onclick="abrirModal(${isEdit})">editar</button>
+            <i class="Acoes__editar fa-solid fa-pen-to-square"id=${paleta._id} onclick="abrirModal(${isEdit})"></i>
             <button class="Acoes__deletar" id=${paleta._id} onclick="deletePaleta()">deletar</button>
           </div>
 
@@ -54,7 +54,7 @@ const findPaletaById = async () => {
         <div class="PaletaCardItem__descricao">${paleta.descricao}</div>
 
         <div class="PaletaListaItem__acoes Acoes">
-          <button class="Acoes__editar" id=${paleta._id} onclick="abrirModal(${isEdit})">editar</button>
+          <i class="Acoes__editar fa-solid fa-pen-to-square"id=${paleta._id} onclick="abrirModal(${isEdit})"></i>
           <button class="Acoes__deletar" id=${paleta._id} onclick="deletePaleta()">deletar</button>
         </div>
 
@@ -145,7 +145,7 @@ async function submitPaleta() {
       <div class="PaletaListaItem__descricao">${novaPaleta.descricao}</div>
 
       <div class="PaletaListaItem__acoes Acoes">
-        <button class="Acoes__editar"  id=${paleta._id} onclick="abrirModal(${isEdit})">editar</button>
+        <i class="Acoes__editar fa-solid fa-pen-to-square"id=${paleta._id} onclick="abrirModal(${isEdit})"></i>
         <button class="Acoes__deletar" id=${paleta._id} onclick="deletePaleta()">deletar</button>
       </div>
 
